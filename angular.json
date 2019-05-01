@@ -58,7 +58,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "socal-media-handler:build"
+            "browserTarget": "socal-media-handler:build",
+            "sslKey": "./ssl/server.key",
+            "sslCert": "./ssl/server.crt"
           },
           "configurations": {
             "production": {

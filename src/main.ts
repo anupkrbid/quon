@@ -13,7 +13,7 @@ if (environment.production) {
 
 // Facebook Initialization
 window.fbAsyncInit = () => {
-  console.log( 'appId: ', environment.FACEBOOK_APP_ID);
+  console.log('Facebook appId: ', environment.FACEBOOK_APP_ID);
   FB.init({
     appId: environment.FACEBOOK_APP_ID,
     autoLogAppEvents: true,
