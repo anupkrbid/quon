@@ -1,5 +1,10 @@
 <router-outlet></router-outlet>
 
-<button (click)="connectWithFacebook()">Connect to Facebook</button>
+<div *ngIf="!onDashboard">
+  <a [routerLink]="['/dashboard']" (click)="onDashboard = true"> Go To Dashboard</a>
 
-{{ title }}
+  <button (click)="connectWithFacebook()">Connect to Facebook</button>
+  {{ title }}
+  <input type="text" #fbpost>
+  <button (click)="postOnFb(fbpost.value)">Post on fb</button>
+</div>

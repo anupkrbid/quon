@@ -9,6 +9,7 @@ declare var FB: any;
 })
 export class AppComponent {
   title = 'socal-media-handler';
+  onDashboard = false;
   constructor() {
     console.log('First blood');
   }
@@ -54,5 +55,9 @@ export class AppComponent {
         // The person is not logged into this app or we are unable to tell.
       }
     });
+  }
+
+  postOnFb(text) {
+    console.log(text);
   }
 }
