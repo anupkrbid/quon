@@ -7,11 +7,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SharedMaterialModule } from './shared/shared-material.module';
+import { SupportedPlatformsComponent } from './supported-platforms/supported-platforms.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    SupportedPlatformsComponent
   ],
   imports: [
     BrowserModule,
@@ -19,6 +21,9 @@ import { SharedMaterialModule } from './shared/shared-material.module';
     FlexLayoutModule,
     AppRoutingModule,
     SharedMaterialModule
+  ],
+  entryComponents: [
+    SupportedPlatformsComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

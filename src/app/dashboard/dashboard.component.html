@@ -1,58 +1,43 @@
 <section fxLayout="row">
-  <nav fxFlex></nav>
+  <!-- <nav fxFlex></nav> -->
+  <!-- <mat-divider [vertical]="true"></mat-divider> -->
   <main fxFlex>
-    <button mat-raised-button color="primary">Add Platform</button>
+    <button mat-raised-button color="primary" (click)="onAddPlatform()">
+      <mat-icon aria-label="Add Platform">add</mat-icon> Add Platform
+    </button>
+    <hr />
+    <mat-list>
+      <h3 mat-subheader>Connected Platforms</h3>
+      <mat-divider></mat-divider>
+      <ng-container *ngFor="let platform of platforms">
+        <mat-list-item>
+          <mat-icon mat-list-icon>
+            <i *ngIf="platform === 'facebook'" class="fa fa-facebook-official" aria-hidden="true"></i>
+            <i *ngIf="platform === 'instagram'" class="fa fa-instagram" aria-hidden="true"></i>
+            <i *ngIf="platform === 'twitter'" class="fa fa-twitter" aria-hidden="true"></i>
+            <i *ngIf="platform === 'linkdin'" class="fa fa-linkedin" aria-hidden="true"></i>
+          </mat-icon>
+          <h4 mat-line>{{ platform }}</h4>
+          <p mat-line> Status: Offline </p>
+          <mat-slide-toggle color="primary" fxFlexAlign="center"></mat-slide-toggle>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </ng-container>
+      <!-- fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs -->
+      <!-- <mat-slide-toggle fxFlex fxLayout="column" fxLayoutAlign="flex-end"></mat-slide-toggle> -->
+    </mat-list>
   </main>
+  <mat-divider [vertical]="true"></mat-divider>
   <aside fxFlex>
-    <form class="example-form">
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Company (disabled)" disabled value="Google">
+    <form>
+
+      <mat-form-field>
+        <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="8" cdkAutosizeMaxRows="16"
+          placeholder="What's on Your Mind!"></textarea>
       </mat-form-field>
 
-      <table class="example-full-width" cellspacing="0">
-        <tr>
-          <td>
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="First name">
-            </mat-form-field>
-          </td>
-          <td>
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="Long Last Name That Will Be Truncated">
-            </mat-form-field>
-          </td>
-        </tr>
-      </table>
+      <button mat-stroked-button color="primary">Post</button>
 
-      <p>
-        <mat-form-field class="example-full-width">
-          <textarea matInput placeholder="Address">1600 Amphitheatre Pkwy</textarea>
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <textarea matInput placeholder="Address 2"></textarea>
-        </mat-form-field>
-      </p>
-
-      <table class="example-full-width" cellspacing="0">
-        <tr>
-          <td>
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="City">
-            </mat-form-field>
-          </td>
-          <td>
-            <mat-form-field class="example-full-width">
-              <input matInput placeholder="State">
-            </mat-form-field>
-          </td>
-          <td>
-            <mat-form-field class="example-full-width">
-              <input matInput #postalCode maxlength="5" placeholder="Postal Code" value="94043">
-              <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
-            </mat-form-field>
-          </td>
-        </tr>
-      </table>
     </form>
   </aside>
 </section>
