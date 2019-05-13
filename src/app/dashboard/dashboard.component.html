@@ -1,43 +1,133 @@
-<section fxLayout="row">
-  <!-- <nav fxFlex></nav> -->
-  <!-- <mat-divider [vertical]="true"></mat-divider> -->
-  <main fxFlex>
-    <button mat-raised-button color="primary" (click)="onAddPlatform()">
-      <mat-icon aria-label="Add Platform">add</mat-icon> Add Platform
-    </button>
-    <hr />
-    <mat-list>
-      <h3 mat-subheader>Connected Platforms</h3>
-      <mat-divider></mat-divider>
-      <ng-container *ngFor="let platform of platforms">
-        <mat-list-item>
-          <mat-icon mat-list-icon>
-            <i *ngIf="platform === 'facebook'" class="fa fa-facebook-official" aria-hidden="true"></i>
-            <i *ngIf="platform === 'instagram'" class="fa fa-instagram" aria-hidden="true"></i>
-            <i *ngIf="platform === 'twitter'" class="fa fa-twitter" aria-hidden="true"></i>
-            <i *ngIf="platform === 'linkdin'" class="fa fa-linkedin" aria-hidden="true"></i>
-          </mat-icon>
-          <h4 mat-line>{{ platform }}</h4>
-          <p mat-line> Status: Offline </p>
-          <mat-slide-toggle color="primary" fxFlexAlign="center"></mat-slide-toggle>
-        </mat-list-item>
-        <mat-divider></mat-divider>
-      </ng-container>
-      <!-- fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs -->
-      <!-- <mat-slide-toggle fxFlex fxLayout="column" fxLayoutAlign="flex-end"></mat-slide-toggle> -->
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side" opened>
+    <mat-list id="menus">
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar class="avatar"></div>
+
+          <mat-card-title>John Doe</mat-card-title>
+          <mat-card-subtitle>Internal</mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+      <mat-list-item>
+        <button class="menu-item" mat-flat-button>
+          <mat-icon>dashboard</mat-icon>
+          Dashboard
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button class="menu-item" mat-flat-button>
+          <mat-icon>work</mat-icon>
+          Project
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button class="menu-item" mat-flat-button>
+          <mat-icon>settings_application</mat-icon>
+          Settings
+        </button>
+      </mat-list-item>
+
     </mat-list>
-  </main>
-  <mat-divider [vertical]="true"></mat-divider>
-  <aside fxFlex>
-    <form>
+  </mat-drawer>
 
-      <mat-form-field>
-        <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="8" cdkAutosizeMaxRows="16"
-          placeholder="What's on Your Mind!"></textarea>
-      </mat-form-field>
+  <div class="example-sidenav-content">
+    <section fxLayout="row">
+      <!-- <nav fxFlex></nav> -->
+      <!-- <mat-divider [vertical]="true"></mat-divider> -->
+      <main fxFlex>
+        <button mat-raised-button color="primary" (click)="onAddPlatform()">
+          <mat-icon aria-label="Add Platform">add</mat-icon> Add Platform
+        </button>
+        <hr />
+        <mat-list>
+          <h3 mat-subheader>Connected Platforms</h3>
+          <mat-divider></mat-divider>
+          <ng-container *ngFor="let platform of platforms">
+            <mat-list-item>
+              <mat-icon mat-list-icon>
+                <i *ngIf="platform === 'facebook'" class="fa fa-facebook-official" aria-hidden="true"></i>
+                <i *ngIf="platform === 'instagram'" class="fa fa-instagram" aria-hidden="true"></i>
+                <i *ngIf="platform === 'twitter'" class="fa fa-twitter" aria-hidden="true"></i>
+                <i *ngIf="platform === 'linkdin'" class="fa fa-linkedin" aria-hidden="true"></i>
+              </mat-icon>
+              <h4 mat-line>{{ platform }}</h4>
+              <p mat-line> Status: Offline </p>
+              <mat-slide-toggle color="primary" fxFlexAlign="center"></mat-slide-toggle>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+          </ng-container>
+          <!-- fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs -->
+          <!-- <mat-slide-toggle fxFlex fxLayout="column" fxLayoutAlign="flex-end"></mat-slide-toggle> -->
+        </mat-list>
+        <button type="button" mat-button (click)="drawer.toggle()">
+          Toggle sidenav
+        </button>
+      </main>
+      <mat-divider [vertical]="true"></mat-divider>
+      <aside fxFlex>
+        <form>
 
-      <button mat-stroked-button color="primary">Post</button>
+          <mat-form-field>
+            <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="8" cdkAutosizeMaxRows="16"
+              placeholder="What's on Your Mind!"></textarea>
+          </mat-form-field>
 
-    </form>
-  </aside>
-</section>
+          <button mat-stroked-button color="primary">Post</button>
+
+        </form>
+      </aside>
+    </section>
+  </div>
+
+</mat-drawer-container>
+
+<!-- mat-drawer [class.menu-open]="isMenuOpen" [class.menu-close]="!isMenuOpen" -->
+<!-- <div class="example-sidenav-content"  [ngStyle]="{ 'margin-left.px': contentMargin }"> -->
+<!-- <mat-sidenav-container id="sidenavContainer" fullscreen>
+  <mat-sidenav mode="side" #sidenav id="sidenav" [class.menu-open]="isMenuOpen" [class.menu-close]="!isMenuOpen" opened>
+
+    <mat-list id="menus">
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar class="avatar"></div>
+
+          <mat-card-title>John Doe</mat-card-title>
+          <mat-card-subtitle>Internal</mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+      <mat-list-item>
+        <button class="menu-item" mat-flat-button>
+          <mat-icon>dashboard</mat-icon>
+          Dashboard
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button class="menu-item" mat-flat-button>
+          <mat-icon>work</mat-icon>
+          Project
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button class="menu-item" mat-flat-button>
+          <mat-icon>settings_application</mat-icon>
+          Settings
+        </button>
+      </mat-list-item>
+
+    </mat-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content [ngStyle]="{ 'margin-left.px': contentMargin }">
+    <mat-selection-list class="dash-list">
+      <h3>TO DO</h3>
+      <mat-list-option *ngFor="let todo of task">
+        {{todo}}
+      </mat-list-option>
+    </mat-selection-list>
+  </mat-sidenav-content>
+</mat-sidenav-container> -->
