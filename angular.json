@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "socal-media-handler": {
+    "quon": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/socal-media-handler",
+            "outputPath": "dist/quon",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -59,20 +59,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "socal-media-handler:build",
-            "sslKey": "./ssl/server.key",
-            "sslCert": "./ssl/server.crt"
+            "browserTarget": "quon:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "socal-media-handler:build:production"
+              "browserTarget": "quon:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "socal-media-handler:build"
+            "browserTarget": "quon:build"
           }
         },
         "test": {
@@ -106,7 +104,7 @@
         }
       }
     },
-    "socal-media-handler-e2e": {
+    "quon-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -115,11 +113,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "socal-media-handler:serve"
+            "devServerTarget": "quon:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "socal-media-handler:serve:production"
+              "devServerTarget": "quon:serve:production"
             }
           }
         },
@@ -135,5 +133,5 @@
       }
     }
   },
-  "defaultProject": "socal-media-handler"
+  "defaultProject": "quon"
 }

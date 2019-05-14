@@ -35,3 +35,21 @@ mat-card {
 .sidenav.half-menu {
   width: 100px;
 }
+
+/* transition-duration: .4s;
+transition-timing-function: cubic-bezier(.25,.8,.25,1); */
+
+.sidenav .mat-list-item-content {
+  padding: 0;
+}
+
+.sidenav .menu-item {
+  width: 100%;
+  border-radius: 0;
+  text-align: left;
+}
+
+.sidenav .menu-item mat-icon {
+  margin-right: 20px;
+  margin-left: 12px;
+}
