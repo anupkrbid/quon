@@ -11,7 +11,6 @@ import { SupportedPlatformsComponent } from '../supported-platforms/supported-pl
 export class DashboardComponent implements OnInit {
   platforms =['facebook', 'instagram', 'twitter', 'linkdin'];
   isMenuOpen = true;
-  contentMargin = 240;
 
   constructor(public dialog: MatDialog) { }
 
@@ -25,15 +24,8 @@ export class DashboardComponent implements OnInit {
   }
 
 
-  onToolbarMenuToggle() {
-    // console.log('On toolbar toggled', this.isMenuOpen);
-    // this.isMenuOpen = !this.isMenuOpen;
-
-    // if (!this.isMenuOpen) {
-    //   this.contentMargin = 70;
-    // } else {
-    //   this.contentMargin = 240;
-    // }
+  onToolbarMenuToggle(drawer) {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 
 }

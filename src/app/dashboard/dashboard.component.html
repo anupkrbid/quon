@@ -1,5 +1,5 @@
-<mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side" opened>
+<mat-drawer-container class="sidenav-container" autosize>
+  <mat-drawer #drawer class="sidenav" mode="side" opened [class.half-menu]="!isMenuOpen">
     <mat-list id="menus">
       <mat-card>
         <mat-card-header>
@@ -23,17 +23,17 @@
         </button>
       </mat-list-item>
 
-      <mat-list-item>
+      <!-- <mat-list-item>
         <button class="menu-item" mat-flat-button>
           <mat-icon>settings_application</mat-icon>
           Settings
         </button>
-      </mat-list-item>
+      </mat-list-item> -->
 
     </mat-list>
   </mat-drawer>
 
-  <div class="example-sidenav-content">
+  <div class="sidenav-content">
     <section fxLayout="row">
       <!-- <nav fxFlex></nav> -->
       <!-- <mat-divider [vertical]="true"></mat-divider> -->
@@ -63,7 +63,10 @@
           <!-- <mat-slide-toggle fxFlex fxLayout="column" fxLayoutAlign="flex-end"></mat-slide-toggle> -->
         </mat-list>
         <button type="button" mat-button (click)="drawer.toggle()">
-          Toggle sidenav
+          Toggle Mobile Sidenav
+        </button>
+        <button type="button" mat-button (click)="onToolbarMenuToggle(drawer)">
+          Toggle Desktop Sidenav
         </button>
       </main>
       <mat-divider [vertical]="true"></mat-divider>
