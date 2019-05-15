@@ -21,20 +21,18 @@
         </button>
       </mat-list-item>
 
-      <!-- <mat-list-item>
+      <mat-list-item>
         <button class="menu-item" mat-flat-button>
-          <mat-icon>settings_application</mat-icon>
+          <mat-icon>settings</mat-icon>
           Settings
         </button>
-      </mat-list-item> -->
+      </mat-list-item>
 
     </mat-list>
   </mat-drawer>
 
   <div class="sidenav-content">
     <section fxLayout="row">
-      <!-- <nav fxFlex></nav> -->
-      <!-- <mat-divider [vertical]="true"></mat-divider> -->
       <main fxFlex>
         <button mat-raised-button color="primary" (click)="onAddPlatform()">
           <mat-icon aria-label="Add Platform">add</mat-icon> Add Platform
@@ -84,51 +82,3 @@
   </div>
 
 </mat-drawer-container>
-
-<!-- mat-drawer [class.menu-open]="isMenuOpen" [class.menu-close]="!isMenuOpen" -->
-<!-- <div class="example-sidenav-content"  [ngStyle]="{ 'margin-left.px': contentMargin }"> -->
-<!-- <mat-sidenav-container id="sidenavContainer" fullscreen>
-  <mat-sidenav mode="side" #sidenav id="sidenav" [class.menu-open]="isMenuOpen" [class.menu-close]="!isMenuOpen" opened>
-
-    <mat-list id="menus">
-      <mat-card>
-        <mat-card-header>
-          <div mat-card-avatar class="avatar"></div>
-
-          <mat-card-title>John Doe</mat-card-title>
-          <mat-card-subtitle>Internal</mat-card-subtitle>
-        </mat-card-header>
-      </mat-card>
-      <mat-list-item>
-        <button class="menu-item" mat-flat-button>
-          <mat-icon>dashboard</mat-icon>
-          Dashboard
-        </button>
-      </mat-list-item>
-
-      <mat-list-item>
-        <button class="menu-item" mat-flat-button>
-          <mat-icon>work</mat-icon>
-          Project
-        </button>
-      </mat-list-item>
-
-      <mat-list-item>
-        <button class="menu-item" mat-flat-button>
-          <mat-icon>settings_application</mat-icon>
-          Settings
-        </button>
-      </mat-list-item>
-
-    </mat-list>
-  </mat-sidenav>
-
-  <mat-sidenav-content [ngStyle]="{ 'margin-left.px': contentMargin }">
-    <mat-selection-list class="dash-list">
-      <h3>TO DO</h3>
-      <mat-list-option *ngFor="let todo of task">
-        {{todo}}
-      </mat-list-option>
-    </mat-selection-list>
-  </mat-sidenav-content>
-</mat-sidenav-container> -->

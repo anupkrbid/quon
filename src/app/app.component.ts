@@ -57,7 +57,4 @@ export class AppComponent {
     });
   }
 
-  postOnFb(text) {
-    console.log(text);
-  }
 }
