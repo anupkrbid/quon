@@ -5,7 +5,7 @@
   </button>
 </h1>
 <div mat-dialog-content>
-  <div class="ripple-container" fxFlex matRipple *ngFor="let platform of data">
+  <div class="ripple-container" role="button" tabindex="0" fxFlex matRipple *ngFor="let platform of data" (click)="connectWith(platform)">
     <i *ngIf="platform === 'facebook'" class="fa fa-facebook-official fa-5x" aria-hidden="true"></i>
     <i *ngIf="platform === 'instagram'" class="fa fa-instagram fa-5x" aria-hidden="true"></i>
     <i *ngIf="platform === 'twitter'" class="fa fa-twitter fa-5x" aria-hidden="true"></i>
