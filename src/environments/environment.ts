@@ -5,15 +5,19 @@
 export const environment = {
   production: false,
   FACEBOOK_APP_ID: '384040512188385',
-  TWITTER: {
-    API_BASE_URL: 'https://api.twitter.com',
-    CONSUMER_KEY: '533loKQcj9HfJ3TyX9gCnBTa0',
-    CONSUMER_SECRET: 'DX7wvXuu2fnZqd5YPj8sBp8zrWymH3x0FjPlydLJFm1F9ePof5'
+  FACEBOOK: {
+    API_BASE_URL: 'https://www.facebook.com/v3.3',
+    APP_ID: '384040512188385',
   },
   INSTAGRAM: {
     API_BASE_URL: 'https://api.instagram.com',
     CLIENT_ID: 'b9c54fb466974d23b3f7c9161fb88a54',
     CLIENT_SECRET: 'INSTAGRAM_CLIENT_SECRET'
+  },
+  TWITTER: {
+    API_BASE_URL: 'https://api.twitter.com',
+    CONSUMER_KEY: '533loKQcj9HfJ3TyX9gCnBTa0',
+    CONSUMER_SECRET: 'DX7wvXuu2fnZqd5YPj8sBp8zrWymH3x0FjPlydLJFm1F9ePof5'
   }
 };
 

@@ -1,3 +1,4 @@
+import { FacebookService } from './facebook/facebook.service';
 import { TwitterService } from './twitter/twitter.service';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
@@ -8,10 +9,17 @@ import { InstagramService } from './instagram/instagram.service';
 })
 export class SocialService {
 
-  constructor(private instagramService: InstagramService, private twitterService: TwitterService) { }
+  constructor(
+    private facebookService: FacebookService,
+    private instagramService: InstagramService,
+    private twitterService: TwitterService
+    ) { }
 
   signInWith(platform) {
     switch (platform) {
+      case 'facebook': {
+        return this.facebookService.signIn();
+      }
       case 'instagram': {
         return this.instagramService.signIn();
       }
